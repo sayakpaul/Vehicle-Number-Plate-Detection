@@ -8,7 +8,7 @@ Dataset used: https://www.kaggle.com/dataturks/vehicle-number-plate-detection
 - Data-Images.zip: Contains the images of the cars, number plates and annotations in `.txt` files (YOLO format)
 - Data_prep_and_visualization.ipynb: A notebook demonstrating the process of preparing the dataset (`.csv` files) for creating TFRecords (otherwise TensorFlow Object Detection API won't work)
 - Indian_Number_plates.json: Configuration file which contains image download paths and annotations
-- exported_graph: Contains the inference graph in `.pb` format which can be used to run inference
+- exported_graph: Contains the inference graph in `.pb` and `.tflite` formats which can be used to run inference on both CPU platforms and on-device platforms
 - label_map.pbtxt: Contains the encodings of the dataset classes which,in this case, is 1: **license_plate**
 - ssd_mobilenet_v1_pets.config: Training and evaluation pipeline configuration file as needed by TensorFlow Object Detection API
 - test.record & train.record: `TFRecords` files of testing and training sets respectively
