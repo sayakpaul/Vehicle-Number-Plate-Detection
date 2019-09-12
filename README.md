@@ -21,7 +21,9 @@ Dataset used: https://www.kaggle.com/dataturks/vehicle-number-plate-detection
 ![](https://github.com/sayakpaul/Vehicle-Number-Plate-Detection/blob/master/demo_images/WhatsApp%20Image%202019-08-24%20at%2016.49.13.jpeg?raw=true)
 
 
-To kick-start the model training process, I followed the steps from TensorFlow Object Detection API's official documentation: https://github.com/tensorflow/models/tree/master/research/object_detection
+To kick-start the model training process and to export the trained model's inference graph (using the `export_tflite_ssd_graph.py` script), I followed:
+- [TensorFlow Object Detection API's official documentation](https://github.com/tensorflow/models/tree/master/research/object_detection)
+- [Training and serving a realtime mobile object detector in 30 minutes with Cloud TPUs](https://medium.com/tensorflow/training-and-serving-a-realtime-mobile-object-detector-in-30-minutes-with-cloud-tpus-b78971cf1193)
 
 I used **SSD_MobileNet_V1** architecture which was pretrained on the COCO dataset. 
 
