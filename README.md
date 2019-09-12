@@ -25,9 +25,9 @@ To kick-start the model training process, I followed the steps from TensorFlow O
 
 I used **SSD_MobileNet_V1** architecture which was pretrained on the COCO dataset. 
 
-To convert the frozen inference graph, I used the following command:
+To convert the frozen inference graph, I ran the following command:
 ```
-!tflite_convert \
+tflite_convert \
     --output_file=detect.tflite \
     --graph_def_file=frozen_inference_graph.pb \
     --input_shapes=1,300,300,3 \
@@ -38,4 +38,6 @@ To convert the frozen inference graph, I used the following command:
     --std_dev_values=128 \
     --change_concat_input_ranges=false \
     --allow_custom_ops
-    ```
+```
+    
+**Note**: To be able convert an inference graph to its `.tflite` variant you need to enable _quantization aware training_ and you can specify that in the `.config` file itself. 
