@@ -24,3 +24,18 @@ Dataset used: https://www.kaggle.com/dataturks/vehicle-number-plate-detection
 To kick-start the model training process, I followed the steps from TensorFlow Object Detection API's official documentation: https://github.com/tensorflow/models/tree/master/research/object_detection
 
 I used **SSD_MobileNet_V1** architecture which was pretrained on the COCO dataset. 
+
+To convert the frozen inference graph, I used the following command:
+```
+!tflite_convert \
+    --output_file=detect.tflite \
+    --graph_def_file=frozen_inference_graph.pb \
+    --input_shapes=1,300,300,3 \
+    --input_arrays=normalized_input_image_tensor \
+    --output_arrays='TFLite_Detection_PostProcess','TFLite_Detection_PostProcess:1','TFLite_Detection_PostProcess:2','TFLite_Detection_PostProcess:3'  \
+    --inference_type=QUANTIZED_UINT8 \
+    --mean_values=128 \
+    --std_dev_values=128 \
+    --change_concat_input_ranges=false \
+    --allow_custom_ops
+    ```
